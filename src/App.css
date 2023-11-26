@@ -1,0 +1,228 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #3498db, #6cb1d3);
+  background-image: url('https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: moveGradient 15s linear infinite;
+}
+
+.App {
+  text-align: center;
+  /* margin: 20px; */
+  margin-top: 20px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200731/pngtree-blue-carbon-background-with-sport-style-and-golden-light-image_371487.jpg');
+  margin-bottom : 2%;
+}
+
+.navbar-left {
+  /* Adjust styles for the header text alignment */
+  display: flex;
+}
+
+.navbar-left h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.navbar-right {
+  display: flex;
+  gap: 10px; /* Adjust spacing between buttons */
+}
+
+
+h1 {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #fff;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.panel-inputs textarea {
+  /* width: 100%;
+  height: 10px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  resize: none;
+  font-size: 1.2em;
+  color: #333;
+  background-color: #ecf0f1; */
+  /* width : 100%;
+  height: 10px; */
+  /* margin : 15px; */
+  padding : 8px;
+  border-radius: 10px;
+  resize: none;
+  font-size: 1.2em;
+
+}
+
+.number-panel textarea{
+  border-radius: 10px;
+  padding: 2px;
+  resize: none;
+  width: 20%;
+  font-size: 1.2em;
+}
+.number-panel {
+  margin: 15px;
+}
+
+textarea:focus {
+  box-shadow: 0 0 5px rgba(52, 152, 219, 1);
+}
+
+button {
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.panel-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  gap : 2em;
+}
+
+.panel-text,
+.annotation-text {
+  width: 48%;
+}
+.comic-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comic-panel {
+  position: relative;
+  margin: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.annotation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+
+/* Background Animation */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.default-text {
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  white-space: nowrap;
+  margin: 10px;
+}
+@media only screen and (max-width: 600px) {
+
+  form {
+    margin: 10px; /* Adjust the margin for better mobile visibility */
+  }
+
+  button {
+    width: 100%; /* Make buttons full width on mobile */
+  }
+
+  .panel-inputs {
+    flex-direction: column; /* Stack panel inputs on mobile */
+  }
+
+  .panel-text,
+  .annotation-text {
+    width: 100%; /* Make textareas full width on mobile */
+  }
+
+  .comic-panel {
+    margin: 5px; /* Adjust margin for better mobile visibility */
+  }
+}
